@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+*{
+    margin: 0;
+}
+#container-grid {
+    display: grid;
+    grid-template:
+        "nav" auto
+        "banner" 400px
+        "descripcion" auto
+        "feature" auto
+        "ubicacion" auto
+        "opinion" auto
+        "footer" auto
+}
+/*Estilos Grid Items*/
+header {
+    grid-area: header;
+    background-color: blue;
+}
+nav {
+    grid-area: navbar;
+    background-color: black;
+}
+main {
+    grid-area: main;
+    background-color: blueviolet;
+}
+aside {
+    grid-area: sidebar;
+    background-color: green;
+}
+footer {
+    grid-area: footer;
+    background-color: black
+}
+
+
+
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "menu";
+    font-family: 'Marcellus', serif;
+    font-size: 1.3em;
+    position: fixed;
+width: 100%;
+z-index: 100;
+
+}
+.logo {
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "logo-img menu-bars";
+    background-color: var(--negro2);
+    padding: 1rem;
+}
+.logo img {
+    justify-self: start;
+    width: 50%;
+    max-width: 180px;
+}
+.logo i {
+    display: none;
+  
+  }
+
+.menu {
+    grid-area: menu;
+    display: grid;
+    background-color: rgba(1, 10, 52, 0.838);
+
+}
+.menu-hr {
+    width: 90%;
+    background-color: var(--blanco);
+    justify-self: center; /*para centrar el hr*/
+}
+ 
+.item {
+    padding: 1rem 0;
+}
+ 
+nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+ 
+nav a:hover {
+    background-color: #0B3860;
+    width: 100%;
+}
+
+.navbar-button {
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+    padding: 0.5rem;
+    font-family: 'Marcellus', serif;
+    color: var(--blanco);
+}
+#banner {
+    background-image: url('../img/index//slide1.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 72%;
+    min-height: 400px;
+    margin-top: 60px;
+}
+.texto{
+    background: rgba(0,0,0,0.3);
+    width: 100%;
+    margin-top: 30%;
+    padding: 3%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.descripcion{
+    padding: 10%;
+    font-size: 1.2em;
+}
+
+#features{
+    background: url(../img/index/bg-features.png);
+    color: white;
+    padding-top: 1rem;
+}
+ 
+.features-title{
+    background-color: rgba(0,0,0,0.35);
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.5em;
+}
+.features-description{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.feature{
+    width: 25%;
+    min-width: 180px;
+    max-width: 230px;
+    margin: 0.8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+ 
+.feature i{
+    font-size: 2.2em;
+    margin-bottom: 1.5rem;
+}
+
+.feature-blue{
+    background-color: #00325eae;
+}
+ 
+.feature-black{
+    background-color: rgba(0,0,0,0.59);
+}
+#ubicacion {
+    width: 100%;
+    margin: 2% 0%;
+    text-align: center;
+    object-fit: contain;
+
+  }
+  iframe{
+    margin: 2% 0%;
+  }
+  
+  #ubicacion h1 {
+    text-align: center;
+    padding: 1rem;
+    font-size: 2.5em;
+    font-family: "Marcellus", serif;
+  }
+  .dirreccion {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid black;
+  }
+.usuarios{
+    width: 100%;
+    height: 30%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+
+.box{
+    color: white;
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+.icon{
+    color: white;
+    display: inline-block;
+}
+.opinionimg{
+    width: 30%;
+    height: 30%;
+    border-radius: 100%;
+    float: left;
+
+}
+.nombre{
+    width: 65%;
+    float: right;
+    text-align: left;
+
+}
+
+.estrellas{
+    color: white;
+}
+
+
+ 
+
+/*Resolución tabletas*/
+@media screen and (max-width:768px) {
+    .logo i {
+        text-align: right;
+        color: #fff;
+        font-size: 2em;
+        display: grid;
+      }
+      .menu {
+        width: 100%;
+        margin: 0;
+        transition: all 0.5s;
+        transform: scale(0);
+        display: none;
+        z-index: 3;
+      }
+      
+      .show-menu {
+        transform: scale(1);
+        display: flex;
+        transition: all 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #0b3860;
+      }
+    
+      .texto{
+        margin-top: 60%;
+      }
+      .imagen2{
+        display: none;
+      }
+      
+      .box{
+        padding: 4%;
+      }
+      .opinionimg{
+        width: 25%;
+        height: 25%;
+      }
+      ul li {
+        list-style: none inside;
+      }
+      .carrusel{
+       
+width: 100%;
+
+      }
+      .carrusel .cajas{
+     width: 300%;
+     margin-top: -26%;
+     display: flex;
+     flex-flow: row nowrap;
+     justify-content: space-around;
+     align-items: center;
+     transition:  all .5s case;
+     transform:  translateX(-100%);
+      }
+      .carrusel .caja{
+        width: calc( 70% / 3 - 3em);
+        height: 20%;
+        color: white;
+        transition: all 0.4s ease;
+        border-radius: 1px;
+        background: linear-gradient(94.54deg, #2875b9 2.89%, #0d3f6c 80.34%);
+       padding: 2%;
+       font-family: sans-serif;
+      }
+.carrusel .puntos{ 
+width: 100%;
+padding: 2em;
+display: grid;
+grid-template-columns: 15% 15% 15%;
+grid-template-rows: 10%;
+align-items: center;
+justify-content: center;
+
+}
+.carrusel .punto{
+width: 3em;
+height: 0.5em;
+background-color: rgb(55, 56, 56);
+margin: 1em;
+}
+.carrusel .punto.activo{
+    background-color: rgb(27, 27, 27);
+}
+}
+/*Resolución resoluciones medias*/
+@media screen and (min-width:1024px) {
+    nav{
+        background-color: black;
+        grid-template-columns: 200px auto;
+        grid-template-areas: 
+        "logo menu";
+}
+.logo img{
+    width: 100%;
+ }
+ 
+ 
+ .menu{
+    background-color: var(--negro2);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-self: end;
+}
+.menu-hr{
+    display: none;
+}
+.item {
+    margin: 0 1rem;
+    align-self: center;
+}
+ 
+nav a {
+    text-align: left;
+}
+ 
+nav a:hover {
+    background-color: transparent;
+    color: var(--azuloscuro);
+}
+ 
+.navbar-button {
+    background-color: var(--azuloscuro);
+    align-self: center;
+}
+
+.menu button {
+    background-color: #0b3860;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+  }
+  .descripcion{
+    display: grid;
+    grid-template-columns: 60% 35%;
+    grid-gap: 100px;
+    padding: 5%;
+    font-size: 1.4em;
+}
+.imagen2{
+    width: 60%;
+    height: 70%;}
+
+}
+
+/*Resolución resoluciones macro*/
+@media screen and (min-width:1308px) {
+    body{
+        background-color: #EAEAEA;
+    }
+    #container-grid{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    nav{
+        width: 100%;
+        max-width: 1300px;
+    }
+    hr{
+        display: none;
+       }
+       .texto{
+        margin-top: 20%;
+      }    
+    .grupo-1{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10%;
+        padding: 4% 4%;
+        justify-content: space-around;
+        }
+        .cajas{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 25% 25% 25%;
+            grid-gap: 8%;
+            margin: 0px 2% 0px 5%;
+            font-size: 1.1em;
+        }  
+        .caja{
+            margin-top: -35%;
+            margin-bottom: 22%;
+            padding: 5%;
+            background: linear-gradient(94.54deg, #1d71bb 2.89%, #0d3f6c 80.34%);
+            color: white;
+            font-family: sans-serif ;
+            
+            
+        }
+        
+         .puntos{
+            display: none;
+         }
+}
+
+
+
